@@ -8,7 +8,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-    res.send('Hello DevOps Course :-) - prove that it worked in Jenkins as well');
+    res.send('Hello DevOps Course :-) - Dieses Dockerfile wurde mittels mehreren Jobs in Jenkins ausgeführt');
 });
 
 app.listen(PORT, HOST);
