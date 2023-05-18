@@ -8,7 +8,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-    res.send('Hello DevOps Course :-)');
+    res.send('Hello DevOps Course :-) - prove that it worked in Jenkins as well');
 });
 
 app.listen(PORT, HOST);
