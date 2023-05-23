@@ -19,5 +19,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acostoo/DevOpsDocker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acostoo/DevOpsDocker/issues"
   }
 }
