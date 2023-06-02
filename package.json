@@ -22,5 +22,7 @@
   },
   "bugs": {
     "url": "https://github.com/acostoo/DevOpsDocker/issues"
-  }
+  },
+  "homepage": "https://github.com/acostoo/DevOpsDocker#readme",
+  "devDependencies": {}
 }
