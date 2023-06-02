@@ -1,16 +1,14 @@
-FROM node:18.12.1
+FROM openjdk:17-jdk-slim
 
-# Create app directory
+RUN apt-get update && apt-get install -y curl \
+&& curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+&& apt-get install -y nodejs \
+&& curl -L https://www.npmjs.com/install.sh | sh
 WORKDIR /usr/src/app
-
-# Copy app
-COPY package*.json ./
-
-# Install
-RUN npm install
-
 COPY . .
-
-# Docker Run Command
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+RUN cd frontend && npm install
+RUN cd frontend && npm run build
+RUN cd backend && chmod +x gradlew
+RUN cd backend && ./gradlew build
+EXPOSE 4567
+CMD ["java", "-jar", "/usr/src/app/backend/build/libs/demo-0.0.1-SNAPSHOT.jar"]
